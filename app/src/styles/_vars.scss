@@ -1,0 +1,85 @@
+/********************
+* VARS
+********************/
+
+$colors: (
+    blue: #285068,
+    sand: #CEB46C,
+    sand-light: #F8F8D8,
+    sand-dark: #BD9B3E,
+    dark: #6F677F,
+    gray: #dddddd,
+    gray-light: #eeeeee,
+    gray-dark: #cccccc,
+    white: #ffffff,
+);
+
+$sizes: (
+    xs: 5px,
+    sm: 10px,
+    base: 15px,
+    lg: 20px,
+    xl: 25px,
+);
+
+:root {
+    @each $color, $value in $colors {
+        --color-#{$color}: #{$value};
+    }
+
+    @each $size, $value in $sizes {
+        --size-#{$size}: #{$value};
+    }
+}
+
+/********************
+* UTILITIES
+********************/
+
+@each $color, $value in $colors {
+    .u-color-#{$color} {
+        color: #{$value};
+    }
+
+    .u-bg-#{$color} {
+        background-color: #{$value};
+    }
+}
+
+@each $size, $value in $sizes {
+    .u-font-size-#{$size} {
+        font-size: #{$value};
+    }
+}
+
+@each $prop, $abbrev in (margin: m, padding: p) {
+    @each $size, $value in $sizes {
+        .u-#{$abbrev}-#{$size} {
+            #{$prop}: #{$value};
+        }
+
+        .u-#{$abbrev}x-#{$size} {
+            #{$prop}-left: #{$value} !important;
+            #{$prop}-right: #{$value} !important;
+        }
+
+        .u-#{$abbrev}y-#{$size} {
+            #{$prop}-top: #{$value} !important;
+            #{$prop}-bottom: #{$value} !important;
+        }
+
+        @each $posProp, $posAbbrev in (top: t, right: r, bottom: b, left: l) {
+            .u-#{$abbrev}#{$posAbbrev}-#{$size} {
+                #{$prop}-#{$posProp}: #{$value} !important;
+            }
+        }
+    }
+}
+
+.u-d-flex {
+    display: flex;
+}
+
+.u-justify-center {
+    justify-content: center;
+}

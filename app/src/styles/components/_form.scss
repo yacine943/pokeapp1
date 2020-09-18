@@ -1,0 +1,24 @@
+/********************
+* FORM
+********************/
+
+.c-form input {
+    padding: var(--size-xs);
+    font-size: var(--size-base);
+
+    &::placeholder {
+        color: var(--color-gray);
+    }
+}
+
+.c-form button {
+    background-color: var(--color-sand);
+    color: var(--color-white);
+    padding: var(--size-xs);
+    border: none;
+
+    &:hover, &:focus, &:active {
+        background-color: var(--color-sand-dark);
+        cursor: pointer;
+    }
+}

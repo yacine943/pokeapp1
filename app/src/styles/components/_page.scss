@@ -1,0 +1,12 @@
+/********************
+* PAGE
+********************/
+
+.c-page {
+    --box-size-x: 400px;
+    --box-size-y: 200px;
+
+    width: 100vw;
+    height: 100vh;
+    background: url('../../images/default-wallpaper.png') no-repeat center center fixed;
+}

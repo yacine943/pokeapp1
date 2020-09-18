@@ -1,0 +1,20 @@
+/********************
+* BOX
+********************/
+
+.c-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: var(--box-size-x);
+    height: var(--box-size-y);
+    padding: var(--size-lg);
+    background-color: var(--color-blue);
+    border: var(--size-sm) solid var(--color-sand);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: calc(var(--box-size-x) / 2 * -1);
+    margin-top: calc(var(--box-size-y) / 2 * -1);
+    text-align: center;
+}
